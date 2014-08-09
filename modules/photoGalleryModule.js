@@ -21,6 +21,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('newAlbum', {
             url: '/newAlbum',
-            templateUrl: './newAlbum.html'
+            templateUrl: './newAlbum.html',
+            controller: function ($scope,$location,albumsStorage) {
+                $scope.add = function(album){
+                    albumsStorage.setData(album);
+                    $location.path('/albums');
+                };
+            }
         });
 });

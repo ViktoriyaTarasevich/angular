@@ -2,27 +2,34 @@
 var jsonData = [
     {
         'picture': 'http://placehold.it/250x250',
-        'tag': 'aute'
+        'tag': 'aute',
+        'photos' : ['http://placehold.it/250x250', 'http://placehold.it/250x250', 'http://placehold.it/250x250']
     },
     {
         'picture': 'http://placehold.it/250x250',
-        'tag': 'ad'
+        'tag': 'ad',
+        'photos' : ['http://placehold.it/250x250']
     },
     {
         'picture': 'http://placehold.it/250x250',
-        'tag': 'ut'
+        'tag': 'ut',
+        'photos' : ['http://placehold.it/250x250', 'http://placehold.it/250x250', 'http://placehold.it/250x250']
     },
     {
         'picture': 'http://placehold.it/250x250',
-        'tag': 'ex'
+        'tag': 'ex',
+        'photos' : ['http://placehold.it/250x250']
     },
     {
         'picture': 'http://placehold.it/250x250',
-        'tag': 'nisi'
+        'tag': 'nisi',
+        'photos' : ['http://placehold.it/250x250', 'http://placehold.it/250x250']
     },
     {
         'picture': 'http://placehold.it/250x250',
-        'tag': 'nulla'
+        'tag': 'nulla',
+        'photos' : ['http://placehold.it/250x250', 'http://placehold.it/250x250', 'http://placehold.it/250x250', 'http://placehold.it/250x250']
     }
 ];
-localStorage.setItem('albums' , JSON.stringify(jsonData));
+if(typeof localStorage.albums === 'undefined')
+    localStorage.setItem('albums' , JSON.stringify(jsonData));

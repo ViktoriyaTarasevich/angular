@@ -10,13 +10,17 @@
     <script src="./services/albumsStorage.js"></script>
     <script src="./filters/searchByAlbumTitle.js"></script>
 </head>
-<body>
+<body >
 <ui-view>
     <div >
         Search: <input ng-model="query">
         <ul>
-            <li ng-repeat="album in albums |albumTitle:query"><img src ="{{album.picture}}"/>{{ album.tag }}</li>
+            <li ng-repeat="album in albums |albumTitle:query">
+                <img src ="{{album.picture}}"/>
+                <span>{{ album.tag }}</span>
+            </li>
         </ul>
+        <a href="#/newAlbum">Создать альбом</a>
     </div>
 </ui-view>
 
