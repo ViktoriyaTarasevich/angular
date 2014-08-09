@@ -9,19 +9,53 @@ app.factory('albumsStorage',function($q, $timeout){
             },500);
             return JSON.parse(localStorage.getItem('albums'));
         },
+        getDataByTitle : function(title){
+            var data = JSON.parse(localStorage.getItem('albums'));
+            for(var i = 0; i < data.length; i++){
+                if(data[i].tag === title){
+                    return data[i];
+                }
+
+            }
+        },
         setData: function(album){
             var deferred = $q.defer();
             $timeout(function(){
 
                 if(typeof localStorage !== 'undefined') {
                     var tempStorage = JSON.parse(localStorage.albums);
+                    album.photos = [];
                     tempStorage.push(album);
                     localStorage.albums = JSON.stringify(tempStorage);
                     deferred.resolve();
                 }
             },500);
-            album.pictures = [];
 
+        },
+        updateData : function(album){
+            if(typeof localStorage !== 'undefined') {
+                var tempStorage = JSON.parse(localStorage.albums);
+                for (var i = 0; i < tempStorage.length; i++){
+                    if (tempStorage[i].tag === album.tag){
+                        tempStorage[i] = album;
+                    }
+                }
+                localStorage.albums = JSON.stringify(tempStorage);
+            }
+        }
+
+    };
+});
+
+app.factory('photoStorage',function(albumsStorage){
+    'use strict';
+    return{
+        addPhoto: function(albumTitle,photo){
+            /*ne norm*/
+            var album = albumsStorage.getDataByTitle(albumTitle);
+            album.photos.push(photo);
+            albumsStorage.updateData(album);
+            /*ne norm*/
         }
     };
 });

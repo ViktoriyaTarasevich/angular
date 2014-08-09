@@ -28,5 +28,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     $location.path('/albums');
                 };
             }
+        })
+        .state('album',{
+            url: '/album/{albumTitle}',
+            templateUrl : './album.html',
+            resolve:{
+                albumTitle: ['$stateParams', function($stateParams){
+                    return $stateParams.albumTitle;
+                }]
+            },
+            controller: function($scope,$location,albumTitle,albumsStorage,photoStorage){
+                var currentAlbum  = albumsStorage.getDataByTitle(albumTitle);
+                $scope.album = currentAlbum;
+                $scope.add = function(photo){
+                    photoStorage.addPhoto(albumTitle,photo);
+                    $location.path('/albums');
+                };
+            }
         });
 });

@@ -17,7 +17,7 @@
         <ul>
             <li ng-repeat="album in albums |albumTitle:query">
                 <img src ="{{album.picture}}"/>
-                <span>{{ album.tag }}</span>
+                <span><a href="#/album/{{ album.tag }}">{{ album.tag }}</a></span>
             </li>
         </ul>
         <a href="#/newAlbum">Создать альбом</a>

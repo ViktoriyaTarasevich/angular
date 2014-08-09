@@ -28,8 +28,11 @@ var jsonData = [
     {
         'picture': 'http://placehold.it/250x250',
         'tag': 'nulla',
-        'photos' : ['http://placehold.it/250x250', 'http://placehold.it/250x250', 'http://placehold.it/250x250', 'http://placehold.it/250x250']
+        'photos' : ['http://placehold.it/250x250', 'http://placehold.it/250x250', 'http://placehold.it/250x250',
+            'http://placehold.it/250x250','http://placehold.it/250x250']
     }
 ];
-if(typeof localStorage.albums === 'undefined')
-    localStorage.setItem('albums' , JSON.stringify(jsonData));
+
+if(typeof localStorage.albums === 'undefined') {
+    localStorage.setItem('albums', JSON.stringify(jsonData));
+}
