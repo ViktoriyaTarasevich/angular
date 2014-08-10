@@ -57,10 +57,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     return $stateParams.albumTitle;
                 }]
             },
-            controller : function($scope,albumTitle,pictureTitle,photoStorage){
-                var i = photoStorage.getPhotoByTitle(albumTitle,pictureTitle);
+            controller : function($scope,albumTitle,pictureTitle,photoStorage,$location){
                 $scope.image = photoStorage.getPhotoByTitle(albumTitle,pictureTitle);
-
+                $scope.addCommentary = function(commentary){
+                    photoStorage.addCommentaryToPhoto(albumTitle,pictureTitle,commentary);
+                    $location.path('/albums');
+                };
             }
         });
 });

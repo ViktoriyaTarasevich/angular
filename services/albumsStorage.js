@@ -70,9 +70,15 @@ app.factory('photoStorage',function(albumsStorage){
         },
         addCommentaryToPhoto: function(albumTitle,photoTitle,commentary){
             var album = albumsStorage.getDataByTitle(albumTitle);
-            var photo = this.getPhotoByTitle(albumTitle,photoTitle);
-            photo.commentary.push(commentary);
+            for (var i = 0; i < album.photos.length; i++){
+                if (photoTitle === album.photos[i].name){
+                    album.photos[i].commentary.push(commentary);
+                }
+            }
+            //var photo = this.getPhotoByTitle(albumTitle,photoTitle);
+           
             albumsStorage.updateData(album);
+
         }
 
     };
