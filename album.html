@@ -6,13 +6,15 @@
 </head>
 <body>
 <ui-view>
-Добавить фото
-<input type="text" ng-model="photo" /><br />
+Фото
+<input type="text" ng-model="photo.picture" /><br />
+Название<input type ="text" ng-model ="photo.name"/><br/>
 <button ng-click="add(photo)">Сохранить</button>
 
     <ul>
         <li ng-repeat="image in album.photos">
-            <img src ="{{image}}"/>
+            <img src ="{{image.picture}}"/>
+            <a href="#/picture/{{album.tag}}/{{image.name}}">{{image.name}}</a>
         </li>
     </ul>
 </ui-view>

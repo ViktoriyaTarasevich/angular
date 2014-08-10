@@ -45,5 +45,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     $location.path('/albums');
                 };
             }
+        })
+        .state('picture',{
+            url: '/picture/{albumTitle}/{pictureTitle}',
+            templateUrl: './picture.html',
+            resolve:{
+                pictureTitle: ['$stateParams', function($stateParams){
+                    return $stateParams.pictureTitle;
+                }],
+                albumTitle : ['$stateParams', function($stateParams){
+                    return $stateParams.albumTitle;
+                }]
+            },
+            controller : function($scope,albumTitle,pictureTitle,photoStorage){
+                var i = photoStorage.getPhotoByTitle(albumTitle,pictureTitle);
+                $scope.image = photoStorage.getPhotoByTitle(albumTitle,pictureTitle);
+
+            }
         });
 });
