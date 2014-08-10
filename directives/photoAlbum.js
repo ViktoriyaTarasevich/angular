@@ -4,8 +4,8 @@ app.directive('photoAlbum',function () {
         restrict :'A',
         template: '<ul>'+
             '<li ng-repeat="image in album.photos">'+
-                '<img src ="{{image.picture}}"/>'+
-                '<a href="#/picture/{{album.tag}}/{{image.name}}">{{image.name}}</a>'+
+                '<a href="#/picture/{{album.tag}}/{{image.name}}"><img src ="{{image.picture}}"/>'+
+                '<h4>{{image.name}}</h4></a>'+
             '</li>'+
         '</ul>'
     };

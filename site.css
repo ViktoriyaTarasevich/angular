@@ -1,0 +1,39 @@
+.css-form input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}
+ul{
+    list-style: none;
+}
+
+.photos {
+    display: block;
+}
+.photos ul {
+    list-style: none;
+}
+.photos ul li {
+    display: inline;
+    list-style: none;
+    float: left;
+    padding: 0 10px 0 0;
+    text-align:center;
+    background-color: #fff;
+    margin:5px;
+}
+.photos ul li a {
+    display: block;
+    opacity: 0.75;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.photos ul li a:hover {
+    opacity: 1.0;
+}
+.photos ul li a img {
+    border: 6px solid #e1d9ec;
+}

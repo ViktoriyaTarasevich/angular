@@ -7,11 +7,13 @@
 </head>
 <body>
 <ui-view>
-Фото
-<input type="text" ng-model="photo.picture" /><br />
-Название<input type ="text" ng-model ="photo.name"/><br/>
-<button ng-click="add(photo)">Сохранить</button>
-    <div photo-album></div>
+<form novalidate class="css-form">
+    Фото
+    <input type="text" ng-model="photo.picture" required /><br />
+    Название<input type ="text" ng-model ="photo.name" required/><br/>
+    <button ng-click="add(photo)">Сохранить</button>
+    <div photo-album class="photos"></div>
+</form>
 </ui-view>
 </body>
 </html>

@@ -75,8 +75,6 @@ app.factory('photoStorage',function(albumsStorage){
                     album.photos[i].commentary.push(commentary);
                 }
             }
-            //var photo = this.getPhotoByTitle(albumTitle,photoTitle);
-           
             albumsStorage.updateData(album);
 
         }
