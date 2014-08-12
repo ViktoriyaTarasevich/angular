@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <title>PhotoGallery</title>
     <link rel="stylesheet" href="css/site.css" type="text/css"/>
-
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 <body >
 <ui-view>
 <div >
-    <a ui-sref="newAlbum">Создать альбом</a>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <a ui-sref="newAlbum">Создать альбом</a>
+        Search: <input ng-model="query" class="form-control">
+    </div>
     <div class="photos" >
-        Search: <input ng-model="query">
+
         <ul>
             <li ng-repeat="album in albums |albumTitle:query">
                 <a ui-sref="album({albumTitle : album.tag })"><img ng-src ="{{album.picture}}"/>
@@ -25,12 +28,14 @@
 <script src="libs/angular.js"></script>
 <script src="libs/angular-ui-router.js"></script>
 <script src="libs/underscore.js"></script>
-<script src="js/controllers/AlbumsController.js"></script>
+<script src="libs/ui-bootstrap-tpls-0.11.0.js"></script>
+
 <script src="js/modules/photoGalleryModule.js"></script>
 
 <script src="js/services/albumsStorage.js"></script>
 <script src="js/services/photoStorage.js"></script>
 
+<script src="js/controllers/AlbumsController.js"></script>
 <script src="js/controllers/AlbumController.js"></script>
 <script src="js/controllers/NewAlbumController.js"></script>
 <script src="js/controllers/PictureController.js"></script>

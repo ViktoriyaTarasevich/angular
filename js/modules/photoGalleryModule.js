@@ -1,4 +1,4 @@
-var app = angular.module('photoGallery', ['ui.router']);
+var app = angular.module('photoGallery', ['ui.router','ui.bootstrap']);
 app.run(function($rootScope){
     'use strict';
     $rootScope.title = 'PhotoGallery';
@@ -44,4 +44,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: './template/picture.html',
             controller : 'PictureController'
         });
+
 });
