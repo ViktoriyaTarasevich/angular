@@ -19,12 +19,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 else{
                     storageInitializer.initializeData();
                 }
+                $scope.delete = function(album) {
+                    albumsStorage.deleteData(album);
+                };
+
             }
         })
         .state('newAlbum', {
             url: '/newAlbum',
             templateUrl: './template/newAlbum.html',
-            controller: 'NewAlbumController'
+            controller: function ($scope,$location,albumsStorage) {
+                $scope.add = function(album){
+                    albumsStorage.setData(album);
+                    $location.path('/albums');
+                };
+            }
 
         })
         .state('album',{
@@ -41,7 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 $scope.myInterval = 2000;
                 $scope.add = function(photo){
                     photoStorage.addPhoto(albumTitle,photo);
-                    $location.path('/albums');
+
                 };
             }
         })

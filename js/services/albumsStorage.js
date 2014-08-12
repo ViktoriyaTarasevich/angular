@@ -42,6 +42,28 @@ app.factory('albumsStorage',function($q, $timeout){
                 }
                 localStorage.albums = JSON.stringify(tempStorage);
             }
+        },
+        searchExistData :function(album){
+            var tempStorage = JSON.parse(localStorage.albums);
+            var item = album.tag;
+            if (typeof item !== 'undefined'){
+                for (var i=0; i<tempStorage.length; i++){
+                    if (tempStorage[i].tag === item) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+
+        },
+        deleteData : function(album){
+            var tempStorage = JSON.parse(localStorage.albums);
+            for (var i=0; i<tempStorage.length; i++){
+                if (tempStorage[i].tag === album.tag){
+                    tempStorage.splice(i, 1);
+                }
+            }
+            localStorage.albums = JSON.stringify(tempStorage);
         }
 
     };

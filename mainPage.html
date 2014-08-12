@@ -31,6 +31,7 @@
             <li ng-repeat="album in albums |albumTitle:query">
                 <a ui-sref="album({albumTitle : album.tag })"><img ng-src ="{{album.picture}}" width="250px" height="250px"/>
                 <h4>{{ album.tag }}</h4></a>
+                <button ng-click="delete(album)" class="btn btn-default">Удалить</button>
             </li>
         </ul>
     </div>
