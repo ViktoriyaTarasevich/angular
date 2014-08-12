@@ -12,8 +12,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url : '/albums',
             templateUrl : './mainPage.html',
 
-            controller : function($scope, albumsStorage){
-                $scope.albums = albumsStorage.getData();
+            controller : function($scope, albumsStorage,storageInitializer){
+                if (localStorage.albums){
+                    $scope.albums = albumsStorage.getData();
+                }
+                else{
+                    storageInitializer.initializeData();
+                }
             }
         })
         .state('newAlbum', {
@@ -33,6 +38,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: function($scope,$location,albumTitle,albumsStorage,photoStorage){
                 var currentAlbum  = albumsStorage.getDataByTitle(albumTitle);
                 $scope.album = currentAlbum;
+                $scope.myInterval = 2000;
                 $scope.add = function(photo){
                     photoStorage.addPhoto(albumTitle,photo);
                     $location.path('/albums');

@@ -2,11 +2,16 @@ app.directive('photoAlbum',function () {
     'use strict';
     return {
         restrict :'A',
-        template: '<ul>'+
-            '<li ng-repeat="image in album.photos">'+
-                '<a href="#/picture/{{album.tag}}/{{image.name}}"><img ng-src ="{{image.picture}}"/>'+
-                '<h4>{{image.name}}</h4></a>'+
-            '</li>'+
-        '</ul>'
+        template:
+            '<div style="height: 700px">'+
+        '<carousel interval="myInterval" >'+
+            '<slide ng-repeat="image in album.photos" active="image.active">'+
+                '<a href="#/picture/{{album.tag}}/{{image.name}}"><img ng-src ="{{image.picture}}" style ="margin:auto;"/>'+
+                    '<div class="carousel-caption">'+
+                        '<p>{{image.name}}</p>'+
+                    '</div>'+
+                '</slide>'+
+            '</carousel>'+
+        '</div>'
     };
 });

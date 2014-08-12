@@ -26,6 +26,9 @@ ul{
 pre{
     width: 500px;
 }
+.container {
+    margin: 0 auto;
+}
 .photos ul li a {
     display: block;
     opacity: 0.75;

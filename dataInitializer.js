@@ -563,7 +563,6 @@ var jsonData = [
         ]
     }
 ];
-localStorage.clear();
 if(typeof localStorage.albums === 'undefined') {
     localStorage.setItem('albums', JSON.stringify(jsonData));
 }
