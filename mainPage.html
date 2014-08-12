@@ -3,31 +3,39 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>PhotoGallery</title>
-    <link rel="stylesheet" href="site.css" type="text/css"/>
-    <script src="dataInitializer.js"></script>
-    <script src="./libs/angular.js"></script>
-    <script src="./libs/angular-ui-router.js"></script>
-    <script src="./modules/photoGalleryModule.js"></script>
-    <script src="./services/albumsStorage.js"></script>
-    <script src="./filters/searchByAlbumTitle.js"></script>
-    <script src="./directives/photoAlbum.js"></script>
+    <link rel="stylesheet" href="css/site.css" type="text/css"/>
+
 </head>
 <body >
 <ui-view>
-
-    <a href="#/newAlbum">Создать альбом</a>
+<div >
+    <a ui-sref="newAlbum">Создать альбом</a>
     <div class="photos" >
         Search: <input ng-model="query">
         <ul>
             <li ng-repeat="album in albums |albumTitle:query">
-                <a href="#/album/{{ album.tag }}"><img src ="{{album.picture}}"/>
+                <a ui-sref="album({albumTitle : album.tag })"><img ng-src ="{{album.picture}}"/>
                 <h4>{{ album.tag }}</h4></a>
             </li>
         </ul>
-
     </div>
-
+</div>
 </ui-view>
+<script src="dataInitializer.js"></script>
+<script src="libs/angular.js"></script>
+<script src="libs/angular-ui-router.js"></script>
+<script src="libs/underscore.js"></script>
+<script src="js/controllers/AlbumsController.js"></script>
+<script src="js/modules/photoGalleryModule.js"></script>
 
+<script src="js/services/albumsStorage.js"></script>
+<script src="js/services/photoStorage.js"></script>
+
+<script src="js/controllers/AlbumController.js"></script>
+<script src="js/controllers/NewAlbumController.js"></script>
+<script src="js/controllers/PictureController.js"></script>
+
+<script src="js/filters/searchByAlbumTitle.js"></script>
+<script src="js/directives/photoAlbum.js"></script>
 </body>
 </html>
