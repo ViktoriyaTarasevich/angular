@@ -5,12 +5,18 @@
     <title></title>
 </head>
 <body>
-<div ng-controller="NewAlbumController">
-<form novalidate class="css-form">
-    Название <input type="text" ng-model="album.tag" /><br />
-    Заглавное фото <input type="text" ng-model="album.picture" /><br />
-    <button ng-click="add(album)">Сохранить</button>
-</form>
+
+<div ng-controller="NewAlbumController" >
+    <form novalidate class="css-form form-horizontal">
+        <div class="container row center">
+            <div class="col-md-4 ">
+                Название <input type="text" ng-model="album.tag" class="form-control col-md-1" /><br />
+                Заглавное фото <input type="text" ng-model="album.picture" class="form-control col-md-1"/><br />
+                <button ng-click="add(album)" class="btn btn-success ">Сохранить</button>
+            </div>
+        </div>
+    </form>
 </div>
+
 </body>
 </html>

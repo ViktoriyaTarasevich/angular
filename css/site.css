@@ -23,6 +23,9 @@ ul{
     background-color: #fff;
     margin:5px;
 }
+pre{
+    width: 500px;
+}
 .photos ul li a {
     display: block;
     opacity: 0.75;
@@ -36,4 +39,6 @@ ul{
 .photos ul li a img {
     border: 6px solid #e1d9ec;
 }
-
+body{
+    padding-top: 100px;
+}

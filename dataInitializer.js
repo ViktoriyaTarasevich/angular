@@ -2,10 +2,10 @@
 var jsonData = [
     {
         'tag': 'velit',
-        'picture': 'http://placehold.it/100x100',
+        'picture': 'http://placekitten.com/g/400/300',
         'photos': [
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/301',
                 'name': 'nulla',
                 'commentary': [
                     {
@@ -19,7 +19,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/302',
                 'name': 'aliqua',
                 'commentary': [
                     {
@@ -53,7 +53,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/303',
                 'name': 'do',
                 'commentary': [
                     {
@@ -67,7 +67,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/304',
                 'name': 'incididunt',
                 'commentary': [
                     {
@@ -77,7 +77,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/305',
                 'name': 'pariatur',
                 'commentary': [
                     {
@@ -107,7 +107,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/306',
                 'name': 'magna',
                 'commentary': [
                     {
@@ -129,7 +129,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/307',
                 'name': 'in',
                 'commentary': [
                     {
@@ -142,10 +142,10 @@ var jsonData = [
     },
     {
         'tag': 'et',
-        'picture': 'http://placehold.it/100x100',
+        'picture': 'http://placekitten.com/g/400/333',
         'photos': [
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/309',
                 'name': 'anim',
                 'commentary': [
                     {
@@ -179,7 +179,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/310',
                 'name': 'in',
                 'commentary': [
                     {
@@ -196,10 +196,10 @@ var jsonData = [
     },
     {
         'tag': 'aute',
-        'picture': 'http://placehold.it/100x100',
+        'picture': 'http://placekitten.com/g/400/311',
         'photos': [
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/312',
                 'name': 'aute',
                 'commentary': [
                     {
@@ -209,7 +209,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/313',
                 'name': 'exercitation',
                 'commentary': [
                     {
@@ -219,7 +219,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/314',
                 'name': 'aliquip',
                 'commentary': [
                     {
@@ -237,7 +237,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/315',
                 'name': 'nulla',
                 'commentary': [
                     {
@@ -251,7 +251,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/316',
                 'name': 'id',
                 'commentary': [
                     {
@@ -261,7 +261,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/317',
                 'name': 'ut',
                 'commentary': [
                     {
@@ -282,10 +282,10 @@ var jsonData = [
     },
     {
         'tag': 'cillum',
-        'picture': 'http://placehold.it/100x100',
+        'picture': 'http://placekitten.com/g/400/318',
         'photos': [
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/319',
                 'name': 'et',
                 'commentary': [
                     {
@@ -303,7 +303,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/320',
                 'name': 'ad',
                 'commentary': [
                     {
@@ -337,7 +337,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/321',
                 'name': 'enim',
                 'commentary': [
                     {
@@ -362,10 +362,10 @@ var jsonData = [
     },
     {
         'tag': 'officia',
-        'picture': 'http://placehold.it/100x100',
+        'picture': 'http://placekitten.com/g/400/322',
         'photos': [
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/300/24',
                 'name': 'elit',
                 'commentary': [
                     {
@@ -387,7 +387,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/323',
                 'name': 'mollit',
                 'commentary': [
                     {
@@ -404,10 +404,10 @@ var jsonData = [
     },
     {
         'tag': 'tempor',
-        'picture': 'http://placehold.it/100x100',
+        'picture': 'http://placekitten.com/g/400/324',
         'photos': [
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/300/27',
                 'name': 'in',
                 'commentary': [
                     {
@@ -417,7 +417,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/325',
                 'name': 'esse',
                 'commentary': [
                     {
@@ -443,7 +443,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/326',
                 'name': 'esse',
                 'commentary': [
                     {
@@ -477,7 +477,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/327',
                 'name': 'consectetur',
                 'commentary': [
                     {
@@ -495,7 +495,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/328',
                 'name': 'ipsum',
                 'commentary': [
                     {
@@ -505,7 +505,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/329',
                 'name': 'sint',
                 'commentary': [
                     {
@@ -531,7 +531,7 @@ var jsonData = [
                 ]
             },
             {
-                'picture': 'http://placehold.it/250x250',
+                'picture': 'http://placekitten.com/g/400/330',
                 'name': 'irure',
                 'commentary': [
                     {
@@ -563,6 +563,7 @@ var jsonData = [
         ]
     }
 ];
+localStorage.clear();
 if(typeof localStorage.albums === 'undefined') {
     localStorage.setItem('albums', JSON.stringify(jsonData));
 }

@@ -8,11 +8,17 @@
 <body>
 <ui-view>
     <div ng-controller="AlbumController">
-        <form novalidate class="css-form">
-            Фото
-            <input type="text" ng-model="photo.picture" required /><br />
-            Название<input type ="text" ng-model ="photo.name" required/><br/>
-            <button ng-click="add(photo)">Сохранить</button>
+        <h4>Добавить картинку</h4>
+        <form novalidate class="css-form form-horizontal">
+            <div class="container row center">
+                <div class="col-md-4 ">
+                    Фото<input type="text" ng-model="photo.picture" class="form-control col-md-1" required /><br />
+                    Название<input type ="text" ng-model ="photo.name" class="form-control col-md-1" required/><br/>
+                    <button ng-click="add(photo)" class="btn btn-success ">Сохранить</button>
+                </div>
+            </div>
+
+
             <div photo-album class="photos"></div>
         </form>
     </div>
