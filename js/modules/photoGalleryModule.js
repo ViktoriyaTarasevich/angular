@@ -14,26 +14,46 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
             controller : function($scope, albumsStorage,storageInitializer){
                 if (localStorage.albums){
-                    $scope.albums = albumsStorage.getData();
+                    var promise = albumsStorage.getData();
+                    promise.then(function(result) {
+                        $scope.albums = result;
+                        $scope.$apply();
+                    });
                 }
                 else{
-                    storageInitializer.initializeData();
+                    var initialDataPromise = storageInitializer.initializeData();
+                    initialDataPromise.then(function(result){
+                        $scope.albums = result;
+                    });
                 }
+                $scope.delete = function(album) {
+                    albumsStorage.deleteData(album);
+                    var promise = albumsStorage.getData();
+                    promise.then(function(result) {
+                        $scope.albums = result;
+                    });
+                };
+
             }
         })
         .state('newAlbum', {
             url: '/newAlbum',
             templateUrl: './template/newAlbum.html',
-            controller: 'NewAlbumController'
+            controller: function ($scope,$location,albumsStorage) {
+                $scope.add = function(album){
+                    albumsStorage.setData(album);
+                    $location.path('/albums');
+                };
+            }
 
         })
         .state('album',{
             url: '/album/{albumTitle}',
             templateUrl : './template/album.html',
             resolve:{
-                albumTitle: ['$stateParams', function($stateParams){
+                albumTitle: function($stateParams){
                     return $stateParams.albumTitle;
-                }]
+                }
             },
             controller: function($scope,$location,albumTitle,albumsStorage,photoStorage){
                 var currentAlbum  = albumsStorage.getDataByTitle(albumTitle);
@@ -41,7 +61,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 $scope.myInterval = 2000;
                 $scope.add = function(photo){
                     photoStorage.addPhoto(albumTitle,photo);
-                    $location.path('/albums');
+                    $scope.album = albumsStorage.getDataByTitle(albumTitle);
+                    $scope.photo = '';
+
                 };
             }
         })

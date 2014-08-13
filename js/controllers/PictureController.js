@@ -6,5 +6,6 @@ app.controller('PictureController', function($scope,photoStorage,$stateParams){
     $scope.addCommentary = function(commentary){
         photoStorage.addCommentaryToPhoto(albumTitle,pictureTitle,commentary);
         $scope.image = photoStorage.getPhotoByTitle(albumTitle,pictureTitle);
+        $scope.commentary= '';
     };
 });

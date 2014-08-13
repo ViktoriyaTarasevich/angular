@@ -4,18 +4,16 @@ app.factory('albumsStorage',function($q, $timeout){
         getData: function() {
             var deferred = $q.defer();
             $timeout(function(){
-                deferred.resolve();
-
-            },500);
-            return JSON.parse(localStorage.getItem('albums'));
+                deferred.resolve(JSON.parse(localStorage.getItem('albums')));
+            },100);
+            return deferred.promise;
         },
         getDataByTitle : function(title){
             var data = JSON.parse(localStorage.getItem('albums'));
             for(var i = 0; i < data.length; i++){
-                if(data[i].tag === title){
+                if(data[i].tag === title) {
                     return data[i];
                 }
-
             }
         },
         setData: function(album){
@@ -29,8 +27,8 @@ app.factory('albumsStorage',function($q, $timeout){
                     localStorage.albums = JSON.stringify(tempStorage);
                     deferred.resolve();
                 }
-            },500);
-
+            },100);
+            return deferred.promise;
         },
         updateData : function(album){
             if (typeof localStorage !== 'undefined') {
@@ -42,6 +40,29 @@ app.factory('albumsStorage',function($q, $timeout){
                 }
                 localStorage.albums = JSON.stringify(tempStorage);
             }
+        },
+        searchExistData : function(album){
+            var tempStorage = JSON.parse(localStorage.albums);
+            var item = album.tag;
+            if (typeof item !== 'undefined'){
+                for (var i=0; i<tempStorage.length; i++){
+                    if (tempStorage[i].tag === item) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+
+        },
+        deleteData : function(album){
+
+            var tempStorage = JSON.parse(localStorage.albums);
+            for (var i=0; i<tempStorage.length; i++){
+                if (tempStorage[i].tag === album.tag){
+                    tempStorage.splice(i, 1);
+                }
+            }
+            localStorage.albums = JSON.stringify(tempStorage);
         }
 
     };
