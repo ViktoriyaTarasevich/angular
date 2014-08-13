@@ -6,8 +6,11 @@
 </head>
 <body>
 <ui-view>
-    <div ng-controller="PictureController">
-    <img ng-src = "{{image.picture}}">
+    <div ng-controller="PictureController" >
+    <div class="text-center">
+        <img ng-src = "{{image.picture}}" >
+    </div>
+
     <ul>
         <li ng-repeat="coment in image.commentary">
             <h3>{{coment.author}}</h3>
@@ -15,10 +18,11 @@
 
         </li>
     </ul>
-    <h4>Комментарий</h4>
+
     <form novalidate name="newCommentary" class="css-form form-horizontal">
-        <div class="container row ">
-            <div class="col-md-4 ">
+        <div class="container ">
+            <div class="col-md-3">
+                <h4>Комментарий</h4>
                 Автор<input type="text" ng-model="commentary.author" class="form-control col-md-1" required/><br />
                 Название<input type ="text" ng-model ="commentary.comment" class="form-control col-md-1" required/><br/>
                 <button ng-click="addCommentary(commentary)" class="btn btn-success" >Сохранить</button>
