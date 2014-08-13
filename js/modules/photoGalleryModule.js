@@ -21,6 +21,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 }
                 $scope.delete = function(album) {
                     albumsStorage.deleteData(album);
+                    $scope.albums = albumsStorage.getData();
                 };
 
             }
@@ -50,6 +51,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 $scope.myInterval = 2000;
                 $scope.add = function(photo){
                     photoStorage.addPhoto(albumTitle,photo);
+                    $scope.album = albumsStorage.getDataByTitle(albumTitle);
+                    $scope.photo = '';
 
                 };
             }
