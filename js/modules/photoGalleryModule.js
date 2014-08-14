@@ -17,13 +17,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     var promise = albumsStorage.getData();
                     promise.then(function(result) {
                         $scope.albums = result;
-                        $scope.$apply();
                     });
                 }
                 else{
                     var initialDataPromise = storageInitializer.initializeData();
                     initialDataPromise.then(function(result){
-                        $scope.albums = result;
+                        var promise = albumsStorage.getData();
+                        promise.then(function(result) {
+                            $scope.albums = result;
+                        });
                     });
                 }
                 $scope.delete = function(album) {
