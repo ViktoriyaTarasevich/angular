@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html ng-app="photoGallery">
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-
-</head>
-<body>
-<ui-view>
-    <div ng-controller="AlbumController">
-        <h4>Добавить картинку</h4>
-        <form novalidate class="css-form form-horizontal">
-            <div class="container row center">
-                <div class="col-md-4 ">
-                    Фото<input type="text" ng-model="photo.picture" class="form-control col-md-1" required /><br />
-                    Название<input type ="text" ng-model ="photo.name" class="form-control col-md-1" required/><br/>
-                    <button ng-click="add(photo)" class="btn btn-success ">Сохранить</button>
-                </div>
+<div>
+    <h4>Добавить картинку</h4>
+    <form novalidate class="css-form form-horizontal">
+        <div class="container row center">
+            <div class="col-md-4 ">
+                Фото<input type="text" ng-model="photo.picture" class="form-control col-md-1" required /><br />
+                Название<input type ="text" ng-model ="photo.name" class="form-control col-md-1" required/><br/>
+                <button ng-click="add(photo)" class="btn btn-success ">Сохранить</button>
             </div>
-        </form>
-    </div>
-    <div photo-album class="photos"></div>
-</ui-view>
-</body>
-</html>
+        </div>
+    </form>
+</div>
+<div photo-album class="photos"></div>
+
+

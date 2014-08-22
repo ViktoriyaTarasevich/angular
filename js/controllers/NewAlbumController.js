@@ -1,6 +1,5 @@
-app.controller('AlbumController', function ($scope,$location,albumsStorage) {
+app.controller('NewAlbumController', function ($scope,$location,albumsStorage,$state) {
     $scope.add = function(album){
         albumsStorage.setData(album);
-        $location.path('/albums');
-    };
-});
+        $state.go('albums')
+    }});

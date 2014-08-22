@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html ng-app="photoGallery">
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<ui-view>
-    <div ng-controller="PictureController" >
+<div>
     <div class="text-center">
         <img ng-src = "{{image.picture}}" >
     </div>
@@ -27,9 +19,7 @@
                 Название<input type ="text" ng-model ="commentary.comment" class="form-control col-md-1" required/><br/>
                 <button ng-click="addCommentary(commentary)" class="btn btn-success" >Сохранить</button>
             </div>
-         </div>
+        </div>
     </form>
-    </div>
-</ui-view>
-</body>
-</html>
+</div>
+
