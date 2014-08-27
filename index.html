@@ -3,11 +3,10 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>PhotoGallery</title>
-    <link rel="stylesheet" href="css/site.css" type="text/css"/>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
-
+    <link rel="stylesheet" href="css/site.css" type="text/css"/>
 </head>
-<body >
+<body>
 <div class="container">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <a ui-sref="albums" class="nav navbar-brand">ФОТОГАЛЕРЕЯ</a>
@@ -19,17 +18,15 @@
     <div>
         <div class="container row">
             <div class="col-md-4 ">
-                <input type="text" ng-model="query" class="form-control" placeholder="Search" />
+                <input type="text" ng-model="query" class="form-control" placeholder="Search"/>
             </div>
         </div>
-
-
-
-        <div class="photos" >
+        <div class="photos">
 
             <ul>
                 <li ng-repeat="album in albums |albumTitle:query">
-                    <a ui-sref="album({albumTitle : album.tag })"><img ng-src ="{{album.picture}}" width="250px" height="250px"/>
+                    <a ui-sref="album({albumTitle : album.tag })"><img ng-src="{{album.picture}}" width="250px"
+                                                                       height="250px"/>
                         <h4>{{ album.tag }}</h4></a>
                     <button ng-click="delete(album)" class="btn btn-default">Удалить</button>
                 </li>
@@ -41,18 +38,18 @@
 <script src="libs/angular-ui-router.js"></script>
 <script src="libs/underscore.js"></script>
 <script src="libs/ui-bootstrap-tpls-0.11.0.js"></script>
-<script src="js/modules/photoGalleryModule.js"></script>
+<script src="js/modules/photo-gallery-module.js"></script>
 
-<script src="js/services/albumsStorage.js"></script>
-<script src="js/services/photoStorage.js"></script>
-<script src="js/services/storageInitializer.js"></script>
+<script src="js/services/albums-storage.js"></script>
+<script src="js/services/photo-storage.js"></script>
+<script src="js/services/storage-initializer.js"></script>
 
-<script src="js/controllers/AlbumsController.js"></script>
-<script src="js/controllers/AlbumController.js"></script>
-<script src="js/controllers/NewAlbumController.js"></script>
-<script src="js/controllers/PictureController.js"></script>
+<script src="js/controllers/albums-controller.js"></script>
+<script src="js/controllers/album-controller.js"></script>
+<script src="js/controllers/new-album-controller.js"></script>
+<script src="js/controllers/picture-controller.js"></script>
 
-<script src="js/filters/searchByAlbumTitle.js"></script>
-<script src="js/directives/photoAlbum.js"></script>
+<script src="js/filters/search-by-album-title.js"></script>
+<script src="js/directives/photo-album.js"></script>
 </body>
 </html>

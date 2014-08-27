@@ -6,6 +6,7 @@ app.factory('photoStorage',function(albumsStorage){
             photo.commentary = [];
             album.photos.push(photo);
             albumsStorage.updateData(album);
+
         },
         getPhotoByTitle:function(albumTitle,photoTitle){
             var album = albumsStorage.getDataByTitle(albumTitle);

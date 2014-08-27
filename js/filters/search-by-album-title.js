@@ -7,7 +7,7 @@ app.filter('albumTitle', function(){
         }
 
         if (typeof items !== 'undefined'){
-            for (var i=0; i<items.length; i++){
+            for (var i=0; i< items.length; i++){
                 if (items[i].tag.indexOf(query) > -1) {
                     arrayToReturn.push(items[i]);
                 }

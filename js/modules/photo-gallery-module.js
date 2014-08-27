@@ -10,7 +10,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('albums', {
             url : '/albums',
-            templateUrl : './mainPage.html',
+            templateUrl : './index.html',
             controller :'AlbumsController'
         })
         .state('newAlbum', {
@@ -21,7 +21,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('album',{
             url: '/album/{albumTitle}',
             templateUrl : './template/album.html',
-
             controller: 'AlbumController'
         })
         .state('picture',{

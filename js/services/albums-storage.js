@@ -55,14 +55,19 @@ app.factory('albumsStorage',function($q, $timeout){
 
         },
         deleteData : function(album){
-
-            var tempStorage = JSON.parse(localStorage.albums);
-            for (var i=0; i<tempStorage.length; i++){
-                if (tempStorage[i].tag === album.tag){
-                    tempStorage.splice(i, 1);
+            var deferred = $q.defer();
+            $timeout(function(){
+                var tempStorage = JSON.parse(localStorage.albums);
+                for (var i=0; i<tempStorage.length; i++){
+                    if (tempStorage[i].tag === album.tag){
+                        tempStorage.splice(i, 1);
+                    }
                 }
-            }
-            localStorage.albums = JSON.stringify(tempStorage);
+                localStorage.albums = JSON.stringify(tempStorage);
+                deferred.resolve();
+            },100);
+            return deferred.promise;
+
         }
 
     };
