@@ -1,23 +1,36 @@
 <div>
     <div class="text-center">
-        <img ng-src = "{{image.picture}}" >
+        <img ng-src="{{image.picture}}">
     </div>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-3">
+            <ul>
+                <li ng-repeat="coment in image.commentary">
+                    <h3>{{coment.author}}</h3>
+                    <pre class="text-center">{{coment.comment}}</pre>
 
-    <ul>
-        <li ng-repeat="coment in image.commentary">
-            <h3>{{coment.author}}</h3>
-            <pre>{{coment.comment}}</pre>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <form novalidate name="newCommentaryForm" class="css-form form-horizontal">
+        <div class="row col-md-offset-4">
+            <h4>Комментарий</h4>
 
-        </li>
-    </ul>
-
-    <form novalidate name="newCommentary" class="css-form form-horizontal">
-        <div class="container ">
-            <div class="col-md-3">
-                <h4>Комментарий</h4>
-                Автор<input type="text" ng-model="commentary.author" class="form-control col-md-1" required/><br />
-                Название<input type ="text" ng-model ="commentary.comment" class="form-control col-md-1" required/><br/>
-                <button ng-click="addCommentary(commentary)" class="btn btn-success" >Сохранить</button>
+            <div class="form-group">
+                <div class="col-md-6">
+                    Автор<input type="text" ng-model="commentary.author" class="form-control col-md-1" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    Название<input type="text" ng-model="commentary.comment" class="form-control col-md-1" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <button ng-click="addCommentary(commentary)" data-ng-disabled="newCommentaryForm.$invalid" class="btn btn-success">Сохранить</button>
+                </div>
             </div>
         </div>
     </form>

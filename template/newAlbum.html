@@ -1,11 +1,24 @@
 <div>
-    <form novalidate class="css-form form-horizontal">
+    <form novalidate class="css-form form-horizontal" name="albumForm">
         <div class="container row center">
-            <div class="col-md-4 ">
-                Название <input type="text" ng-model="album.tag" class="form-control col-md-1" /><br />
-                Заглавное фото <input type="text" ng-model="album.picture" class="form-control col-md-1"/><br />
-                <button ng-click="add(album)" class="btn btn-success ">Сохранить</button>
+            <h4>Новый альбом </h4>
+
+            <div class="form-group">
+                <div class="col-md-4 ">
+                    Название <input type="text" ng-model="album.tag" class="form-control col-md-1" required/>
+                </div>
             </div>
+            <div class="form-group">
+                <div class="col-md-4 ">
+                    Заглавное фото <input name="input"  ng-model="album.picture"
+                                          type="url" class="form-control col-md-1" required/>
+                </div>
+
+            </div>
+            <div class="error" ng-show="albumForm.input.$error.url">
+                Not valid url!
+            </div>
+            <button ng-click="add(album)" data-ng-disabled="albumForm.$invalid" class="btn btn-success ">Сохранить</button>
         </div>
     </form>
 </div>

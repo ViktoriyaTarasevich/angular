@@ -13,27 +13,27 @@
         <a ui-sref="newAlbum" class="navbar-text">Создать альбом</a>
     </div>
 </div>
-
-<ui-view>
-    <div>
-        <div class="container row">
-            <div class="col-md-4 ">
-                <input type="text" ng-model="query" class="form-control" placeholder="Search"/>
+<div class="container">
+    <ui-view>
+        <div>
+            <div class="container row">
+                <div class="col-md-4 ">
+                    <input type="text" ng-model="query" class="form-control" placeholder="Search"/>
+                </div>
+            </div>
+            <div class="photos">
+                <ul>
+                    <li ng-repeat="album in albums |albumTitle:query">
+                        <a ui-sref="album({albumTitle : album.tag })">
+                            <img ng-src="{{album.picture}}" width="250px" height="250px"/>
+                            <h4>{{ album.tag }}</h4></a>
+                        <button ng-click="delete(album)" class="btn btn-default">Удалить</button>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="photos">
-
-            <ul>
-                <li ng-repeat="album in albums |albumTitle:query">
-                    <a ui-sref="album({albumTitle : album.tag })"><img ng-src="{{album.picture}}" width="250px"
-                                                                       height="250px"/>
-                        <h4>{{ album.tag }}</h4></a>
-                    <button ng-click="delete(album)" class="btn btn-default">Удалить</button>
-                </li>
-            </ul>
-        </div>
-    </div>
-</ui-view>
+    </ui-view>
+</div>
 <script src="libs/angular.min.js"></script>
 <script src="libs/angular-ui-router.js"></script>
 <script src="libs/underscore.js"></script>

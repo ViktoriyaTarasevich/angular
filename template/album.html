@@ -1,15 +1,27 @@
-<div>
-    <h4>Добавить картинку</h4>
-    <form novalidate class="css-form form-horizontal">
-        <div class="container row center">
-            <div class="col-md-4 ">
-                Фото<input type="text" ng-model="photo.picture" class="form-control col-md-1" required /><br />
-                Название<input type ="text" ng-model ="photo.name" class="form-control col-md-1" required/><br/>
-                <button ng-click="add(photo)" class="btn btn-success ">Сохранить</button>
+<form novalidate class="css-form form-horizontal" name="photoForm">
+    <div class="row center">
+        <div photo-album class="photos"></div>
+        <h4>Добавить картинку</h4>
+
+        <div>
+            <div class="form-group">
+                <div class="col-md-4 ">
+                    Фото<input type="url" name="input" ng-model="photo.picture" class="form-control col-md-1" required/>
+                </div>
             </div>
+            <span class="error" ng-show="photoForm.input.$error.url">
+                Not valid url!
+            </span>
+            <div class="form-group">
+                <div class="col-md-4 ">
+                    Название<input type="text" ng-model="photo.name" class="form-control col-md-1" required/>
+                </div>
+            </div>
+
+            <button ng-click="add(photo)" data-ng-disabled="photoForm.$invalid" class="btn btn-success ">Сохранить</button>
         </div>
-    </form>
-</div>
-<div photo-album class="photos"></div>
+    </div>
+</form>
+
 
 

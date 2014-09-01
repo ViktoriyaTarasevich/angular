@@ -5,39 +5,53 @@
 .css-form input.ng-valid.ng-dirty {
     background-color: #78FA89;
 }
-ul{
+
+ul {
     list-style: none;
 }
+
 .photos {
-    display: block;
+
 }
+.carousel-inner{
+    width:100%;
+    max-height: 300px !important;
+}
+
 .photos ul {
     list-style: none;
 }
+
 .photos ul li {
     list-style: none;
     float: left;
     padding: 0 10px 0 0;
-    text-align:center;
+    text-align: center;
     background-color: #fff;
-    margin:5px;
+    margin: 5px;
 }
-pre{
+
+pre {
     width: 500px;
 }
+
 .container {
     margin: 0 auto;
 }
+
 .photos ul li a {
     display: block;
     opacity: 0.75;
 }
+
 .photos ul li a:hover {
     opacity: 1.0;
 }
+
 .photos ul li a img {
     border: 6px solid #e1d9ec;
 }
-body{
+
+body {
     padding-top: 100px;
 }

@@ -1,7 +1,7 @@
-app.factory('storageInitializer',function($http,$q) {
+app.factory('storageInitializer', function ($http, $q) {
     'use strict';
     return{
-        initializeData : function(){
+        initializeData: function () {
             return $http.get("albums.json")
                 .success(function (data) {
                     localStorage.setItem('albums', JSON.stringify(data));
@@ -10,6 +10,5 @@ app.factory('storageInitializer',function($http,$q) {
                     return JSON.stringify(data);
                 });
         }
-    }
-
+    };
 });
