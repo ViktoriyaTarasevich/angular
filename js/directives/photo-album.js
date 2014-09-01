@@ -3,8 +3,11 @@ app.directive('photoAlbum', function () {
     return {
         restrict: 'A',
         templateUrl: 'template/photoAlbum.html',
-        link: function ($scope) {
+        link: function ($scope, element) {
             $scope.myInterval = 2000;
+            element.css({
+                margin: '0 auto'
+            });
         }
     };
 });

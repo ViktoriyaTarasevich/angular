@@ -8,8 +8,8 @@ app.controller('AlbumsController', function ($scope, albumsStorage, storageIniti
         );
     }
     else {
-        var initialDataPromise = storageInitializer.initializeData();
-        initialDataPromise.then(function (result) {
+        storageInitializer.initializeData()
+            .then(function (result) {
             albumsStorage.getData()
                 .then(function (result) {
                     $scope.albums = result;
